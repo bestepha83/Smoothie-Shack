@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smoothie Shack</title>
+    <link rel="stylesheet" href="smoothie.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="smoothie.html" class = "link">Home</a></li>
+                <li><a href="#menu" class = "link">Menu</a></li>
+                <li><a href="#create" class = "link">Create Your Own</a></li>
+                <li><a href="#contact" class = "link">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="top">
+            <div class = "burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="cart-info" id = "cart-info">
+                <i class="fas fa-shopping-cart"></i>   
+                <span id = "item-count">0</span>           
+            </div>
+            <div class="cart" id = 'cart' style = "display: none;">
+                <div class="cart-header">Cart</div>
+                <div class="cart-items"></div>
+                <div class="cart-total">Total<span class = "cart-total-price">$0</span></div>
+                <div class="purchase">
+                    <button class="btn-purchase" type = "button">Purchase</button>
+                </div>
+            </div>
+
+            <img src="Images/logo.png" alt="">            
+        </div>
+
+        <div class="circles">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+
+
+        <div class="banner">
+            <div class="banner-image">
+                <img src="Images/Banner/smoothie-1.png" alt="">    
+                <div class="circle4"></div>            
+            </div>
+            <div class="banner-text">
+                <h1>The Smoothie Shack</h1>
+                <button href = "#menu">Let's Get Started</button>  
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class = "product-title">Menu</h1>
+        <div class="products" id = "menu">
+            <h1 class="smoothie-header">Smoothies</h1>
+            <div class="column-1">
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Strawberry Splash</h2>
+                    <img src="Images/Products/Smoothies/smoothie-1.png" alt="" class = "shop-item-image">
+                    <button class = "more">Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>Strawberries</li>
+                            <li>Strawberry Juice</li>
+                            <li>Strawberry Jam</li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>$30</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Blackberry Blast</h2>
+                    <img src="Images/Products/Smoothies/smoothie-5.png" alt="" class = "shop-item-image">
+                    <button class = "more">Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>Blackberries</li>
+                            <li>Twirly Straws</li>
+                            <li>Hint of Hint of Lime</li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>Above YOUR Pay Grade</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Banana Bounce</h2>
+                    <img src="Images/Products/Bowls/bowl-1.png" alt="" class = "shop-item-image">
+                    <button class = "more">Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>Bananas</li>
+                            <li>Miscellaneous</li>
+                            <li>Human, I'll let you guess which body part...</li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>Don't Even Consider It</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column-2">
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Orange Delight</h2>
+                    <img src="Images/Products/Smoothies/juice.png" alt="" class = "shop-item-image">
+                    <button class = "more">Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>Oranges</li>
+                            <li>That's Pretty Much It</li>
+                            <li></li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>$</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Coconut Crumble</h2>
+                    <img src="Images/Products/Bowls/bowl-2.png" alt="" class = "shop-item-image">
+                    <button class = 'more'>Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>One Coconut</li>
+                            <li>Some Weird Radish Lookin Things</li>
+                            <li>Spoon Not Included</li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>Guess</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2 class = 'shop-item-title'>Granola Crunch</h2>
+                    <img src="Images/Products/Bowls/bowl-3.png" alt="" class = "shop-item-image">
+                    <button class = "more">Tell Me More</button>
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ol>
+                            <li>Granola</li>
+                            <li>Crunch</li>
+                            <li>Pickled Peaches</li>
+                        </ol>
+                        <p>Price: <span class = 'shop-item-price'>Not Worth It</span></p>
+                        <button class = "shop-item-button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>         
+            <h1 class="bowl-header">Bowls</h1>   
+        </div>
+
+        <i class="fas fa-arrow-alt-circle-up"></i>
+
+        <section class="create" id = 'create'>
+                <h1 class = 'shop-item-title'>Create Your Own</h1>
+                <img src="Images/Create/Cup/empty.png" alt="" class = "shop-item-image">
+                <div class="create-selection">
+                    <div class = "juice">
+                        <h2>1st: Pick Your Juice</h2>
+                        <p>Choose One:</p>
+                        <div class="juice-options">
+                            <img src="Images/Create/Asset 3.png" alt="" class = "orange">
+                            <img src="Images/Create/apple.png" alt="" class = "apple">                    
+                        </div>
+                        <div class="creation">
+                            <h2>Your Ingredients:</h2>
+                            <ol class = "ingredient-list">
+                            </ol>
+                        </div>                      
+                    </div>
+                    <div class = "fruit">
+                        <h2>2nd: Pick Your Fruit</h2>
+                        <p>Choose Two:</p>
+                        <div class="fruit-options">
+                            <div class="row-1">
+                                <img src="Images/Create/Asset 5.png" alt="" class = "strawberry fruit-img">                          
+                                <img src="Images/Create/pineapple.png" alt="" class = "pineapple fruit-img">
+                                <img src="Images/Create/Asset 6.png" alt="" class = "peach fruit-img">                          
+                            </div>
+                            <div class="row-2">
+                                <img src="Images/Create/Asset 7.png" alt="" class = "banana fruit-img">
+                                <img src="Images/Create/Asset 8.png" alt="" class = "blackberry fruit-img">                          
+                                <img src="Images/Create/Asset 9.png" alt="" class = "blueberry fruit-img">                          
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+    
+                <div class="special-request-container">
+                    <div class="special-request">
+                        <h2>Special Requests:</h2>
+                        <input type="text" placeholder = "What Else You Want?">
+                        <input type="submit">                        
+                    </div>
+                </div>
+                <div class="create-price shop-item-price">$50</div>
+                <div class="creation-button">
+                    <button class = "shop-item-button">Add to Cart</button>
+                </div>
+    
+            </section>
+    </main>
+
+    <footer>
+        <h2 id = "contact">Contact Us</h2>
+        <div class="contact-container">
+            <form>
+                <div class="inputBox">
+                    <input type = "text" name = "" required = "required">
+                    <span>Full Name</span>
+                </div>
+                <div class="inputBox">
+                    <input type = "email" name = "" required = "required">
+                    <span>Email Address</span>
+                </div>
+                <div class="inputBox">
+                    <textarea required = "required"></textarea>
+                    <span>Go Ahead, Tell Us What You Think, I dare you...</span>
+                </div>
+                <div class="inputBox">
+                    <input type = "submit" value = "Send" name = "">
+                </div>
+            </form>
+            <div class="img-container">
+                <img src="Images/contact.jpg" alt="">            
+            </div>            
+        </div>
+
+
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('nav');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('toggle');
+            nav.classList.toggle('nav-active');
+        })
+
+        let buttons = document.querySelectorAll('.more')
+        let button_array = Array.from(buttons)
+
+        button_array.forEach(function(button) {
+            button.addEventListener('click', () => {
+                this.button = button
+                let card = button.parentElement
+                card.classList.toggle('active')
+                if (button.innerText === 'Tell Me More') {
+                    button.innerText = 'Tell Me Less'
+                } else {
+                    button.innerText = 'Tell Me More'
+                }
+            });
+        });
+
+
+        $('nav a[href*="#"], button[href*="#"]').on('click', function () {
+            $('html, body').animate( {
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 1300);
+            burger.classList.remove('toggle');
+            nav.classList.remove('nav-active');
+        });
+
+        $('.fa-arrow-alt-circle-up').on('click', function () {
+            $('html, body').animate( {
+                scrollTop: 0
+            }, 2000);
+        });
+
+        let creationList = document.querySelector('.ingredient-list')
+        let clicked = 0
+
+        let juices = document.querySelector('.juice-options').children
+        let juice_array = Array.from(juices)
+        let juiceItem = document.createElement('div');
+        juiceItem.classList.add('item')
+        let juiceCancel = juiceItem.appendChild(document.createElement('button')).innerText = 'X';
+        let juiceLi = juiceItem.appendChild(document.createElement('li'));
+        let juiceImg = document.querySelector('.create').children[1]
+
+
+
+        juice_array.forEach(function(juice) {          
+            juice.addEventListener('click', ()=> {
+                for (var i = 0; i<juice_array.length; i++) {
+                    juices[i].removeAttribute('id', 'selection-border');
+                }  
+                this.juice = juice
+                juice.setAttribute('id', 'selection-border');                  
+                if(juiceImg.classList.length === 0) {
+                    juiceImg.classList.add('img-animation')
+                } else {
+                    juiceImg.classList.remove('img-animation')
+                    void juiceImg.offsetWidth;
+                    juiceImg.classList.add('img-animation')
+                }
+                if (juice.classList.contains('orange')) {
+                    juiceLi.innerText = 'Orange Juice';
+                    creationList.appendChild(juiceItem);
+                    juiceImg.src = "Images/Create/Cup/orange.png"
+                } else {
+                    juiceLi.innerText = 'Apple Juice';
+                    creationList.appendChild(juiceItem);
+                    juiceImg.src = "Images/Create/Cup/apple.png"
+                }
+                if (clicked === 0) {
+                    clicked += 1;
+                }
+                if (clicked > 0) {
+                    console.log('yoo')
+                    const cancelBtns = document.querySelector('juiceItem').firstChild
+                    console.log(cancelBtns)
+                    let cancelBtn_array = Array.from(cancelBtns)   
+                    cancelBtn_array.forEach(function(btn) {
+                        btn.addEventListener('click', ()=> {
+                            creationList.removeChild
+                        })
+                    })         
+                }                
+                return clicked;
+            })  
+        })
+ 
+
+
+
+
+        const fruits = document.querySelectorAll('.fruit-img');
+        let fruit_array = Array.from(fruits)
+
+        fruit_array.forEach(function(fruit) {
+            fruit.addEventListener('click', ()=> {
+                if (clicked > 0) {
+                    clicked += 1;
+                } else {
+                    alert('Please Choose Juice First');
+                    return clicked;
+                }
+                this.fruit = fruit
+                fruitClass = fruit.classList
+                let fruitItem = document.createElement('div');
+                fruitItem.classList.add('item')
+                let fruitCancel = fruitItem.appendChild(document.createElement('button')).innerText = 'X';
+                let fruitLi = fruitItem.appendChild(document.createElement('li'));
+                let newListItem = fruitLi
+                let oldListItem = creationList.lastChild
+                if(juiceImg.classList.length === 0) {
+                    juiceImg.classList.add('img-animation')
+                } else {
+                    juiceImg.classList.remove('img-animation')
+                    void juiceImg.offsetWidth;
+                    juiceImg.classList.add('img-animation')
+                }
+                fruit.setAttribute('id', 'selection-border');                  
+                if (clicked < 4) {
+                    switch(true) {
+                        case fruitClass.contains('strawberry'):
+                            newListItem.innerText = 'Strawberry';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/strawberry.png";
+                            break;
+                        case fruitClass.contains('pineapple'):
+                            newListItem.innerText = 'Pineapple';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/pineapple.png"; 
+                            break;
+                        case fruitClass.contains('peach'):
+                            newListItem.innerText = 'Peach';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/peach.png";                      
+                            break;
+                        case fruitClass.contains('banana'):
+                            newListItem.innerText = 'Banana';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/banana.png";
+                            break;
+                        case fruitClass.contains('blackberry'):
+                            newListItem.innerText = 'Blackberry';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/blackberry.png";
+                            break;
+                        case fruitClass.contains('blueberry'):
+                            newListItem.innerText = 'Blueberry';
+                            creationList.appendChild(fruitItem);
+                            juiceImg.src = "Images/Create/Cup/blueberry.png";
+                            break;
+                        default:
+                            console.log('wtf');
+                    }
+                } else {                 
+                    switch(true) {
+                        case fruitClass.contains('strawberry'):
+                            newListItem.innerText = 'Strawberry';
+                            creationList.replaceChild(fruitItem, oldListItem);
+                            juiceImg.src = "Images/Create/Cup/strawberry.png";
+                            break;
+                        case fruitClass.contains('pineapple'):
+                            newListItem.innerText = 'Pineapple';
+                            creationList.replaceChild(fruitItem, oldListItem);
+                            juiceImg.src = "Images/Create/Cup/pineapple.png";                           
+                            break;
+                        case fruitClass.contains('peach'):
+                            newListItem.innerText = 'Peach';
+                            creationList.replaceChild(fruitItem, oldListItem); 
+                            juiceImg.src = "Images/Create/Cup/peach.png";      
+                            break;
+                        case fruitClass.contains('banana'):
+                            newListItem.innerText = 'Banana';
+                            creationList.replaceChild(fruitItem, oldListItem);
+                            juiceImg.src = "Images/Create/Cup/banana.png";
+                            break;
+                        case fruitClass.contains('blackberry'):
+                            newListItem.innerText = 'Blackberry';
+                            creationList.replaceChild(fruitItem, oldListItem);
+                            juiceImg.src = "Images/Create/Cup/blackberry.png";
+                            break;
+                        case fruitClass.contains('blueberry'):
+                            newListItem.innerText = 'Blueberry';
+                            creationList.replaceChild(fruitItem, oldListItem);
+                            juiceImg.src = "Images/Create/Cup/blueberry.png";
+                            break;
+                        default:
+                            console.log('wtf');
+                    }
+                }
+                return clicked, creationList.length;
+            })    
+        })
+
+
+
+        let specialRequestButton = document.querySelector('.special-request').lastElementChild
+        specialRequestButton.addEventListener('click', ()=> {
+            let requestItem = document.createElement('div');
+            requestItem.classList.add('item')
+            let requestCancel = requestItem.appendChild(document.createElement('button')).innerText = 'X';
+            let requestLi = requestItem.appendChild(document.createElement('li'));
+            let requestValue = document.querySelector('.special-request').querySelector('input').value;
+            let requestValueNode = document.createTextNode(requestValue);
+            if (requestValue.length > 0) {
+                requestLi.appendChild(requestValueNode)
+                creationList.appendChild(requestItem)                  
+            }
+            return creationList.length           
+        });
+
+        let addCreationToCartBtn = document.querySelector('.create').lastElementChild
+        addCreationToCartBtn.addEventListener('click', ()=> {
+            fruit_array.forEach(function(fruit) {
+                fruit.classList.remove('ingredient-spin-animation')
+                void fruit.offsetWidth;
+                fruit.classList.add('ingredient-spin-animation')
+            });
+            juice_array.forEach(function(juice) {
+                juice.classList.remove('ingredient-spin-animation')
+                void juice.offsetWidth;
+                juice.classList.add('ingredient-spin-animation')
+            });
+            for (var i = 0; i<juice_array.length; i++) {
+                juices[i].removeAttribute('id', 'selection-border');
+            } 
+            for (var i = 0; i<fruit_array.length; i++) {
+                fruits[i].removeAttribute('id', 'selection-border');
+            } 
+            juiceImg.classList.remove('img-animation')
+            void juiceImg.offsetWidth;
+            juiceImg.classList.add('img-animation')
+            juiceImg.src = "Images/Create/Cup/empty.png";
+            creationList.innerHTML = '';
+            clicked = 0;
+            addCreationToCartBtn.classList.remove('button-animation')
+            void addCreationToCartBtn.offsetWidth;
+            addCreationToCartBtn.classList.add('button-animation')
+        })
+        console.log(window.innerWidth)
+
+
+
+
+
+
+        // CART
+                //show cart
+        const cartInfo = document.querySelector('.fa-shopping-cart');
+        const cart = document.querySelector('.cart');
+        
+        cartInfo.addEventListener('click', function(){
+            if (cart.style.display === 'none') {
+                cart.style.display = "block";
+            } else {
+                cart.style.display = 'none';
+            }
+        })
+
+        if (document.readyState == 'loading') {
+            document.addEventListener('DOMContentLoaded', ready)
+        } else {
+            ready()
+        }
+
+
+
+        function ready() {
+            var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+            for (var i = 0; i < removeCartItemButtons.length; i++) {
+                var button = removeCartItemButtons[i]
+                button.addEventListener('click', removeCartItem)
+            }
+
+            var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+            for (var i = 0; i < quantityInputs.length; i++) {
+                var input = quantityInputs[i]
+                input.addEventListener('change', quantityChanged)
+            }
+
+            var addToCartButtons = document.getElementsByClassName('shop-item-button')
+            for (var i = 0; i < addToCartButtons.length; i++) {
+                var button = addToCartButtons[i]
+                button.addEventListener('click', addToCartClicked)
+            }
+
+            document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+        }
+
+        function removeCartItem(event) {
+            var buttonClicked = event.target
+            buttonClicked.parentElement.parentElement.remove()
+            updateCartTotal()
+        }
+
+        function quantityChanged(event) {
+            var input = event.target
+            if (isNaN(input.value) || input.value <= 0) {
+                input.value = 1
+            }
+            updateCartTotal()
+        }
+
+        function addToCartClicked(event) {
+            var button = event.target
+            var shopItem = button.parentElement.parentElement
+            var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+            var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+            var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+            addItemToCart(title, price, imageSrc)
+            updateCartTotal()
+        }
+
+        function addItemToCart(title, price, imageSrc) {
+            var cartRow = document.createElement('div')
+            cartRow.classList.add('cart-row')
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+            for (var i = 0; i < cartItemNames.length; i++) {
+                if (cartItemNames[i].innerText == title) {
+                    alert('This item is already added to the cart')
+                    return
+                }
+            }
+            var cartRowContents = `
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="${imageSrc}">
+                    <span class="cart-item-title">${title}</span>
+                </div>
+                <span class="cart-price cart-column">${price}</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button">X</button>
+                </div>`
+            cartRow.innerHTML = cartRowContents
+            cartItems.append(cartRow)
+            cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+            cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+        }
+
+        function updateCartTotal() {
+            var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+            var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+            var total = 0
+            for (var i = 0; i < cartRows.length; i++) {
+                var cartRow = cartRows[i]
+                var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+                var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+                var price = parseFloat(priceElement.innerText.replace('$', ''))
+                var quantity = quantityElement.value
+                total = total + (price * quantity)
+            }
+            total = Math.round(total * 100) / 100
+            document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+            document.getElementById('item-count').textContent = cartRows.length;
+        }
+
+        // Purchase
+        function purchaseClicked() {
+            alert('Thank you for your purchase')
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            while (cartItems.hasChildNodes()) {
+                cartItems.removeChild(cartItems.firstChild)
+            }
+            updateCartTotal()
+        }
+    </script>
+
+</body>
+</html>

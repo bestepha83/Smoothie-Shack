@@ -1,0 +1,1086 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+@mixin title($color) {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color;
+    font-size: 6rem;
+}
+@mixin clear-button() {
+    color: $orange;
+    background: transparent;
+    border: 2px solid $orange;
+    border-radius: 50px;
+    padding: 1rem 1rem;
+    font-size: 1.3rem;
+    z-index: 1000;
+    outline: none;
+}
+@mixin white-button($color) {
+    color: $color;
+    background: $white;
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    border: none;
+    border: solid 3px $white;
+    border-radius: 50px;
+    z-index: 10001;
+    outline: none;
+}
+
+$orange: #FAC1AD;
+$white: #fff;
+$pink: #E9D6D7;
+
+header {
+    max-height: 100vh;
+}
+nav {
+    display: flex;
+    position: absolute;
+    top: -100vh;
+    height: 100vh;
+    width: 100%;
+    background-color: $orange;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease-in-out;
+    z-index: 30;
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $white;
+        font-size: 6rem;
+        line-height: 1.5;
+        letter-spacing: 5px;
+        border-bottom: solid 5px transparent;
+        transition: all 0.3s;
+        &:hover {
+            color: $white;
+            border-bottom: solid 5px white;
+        }
+    }
+}
+.nav-active {
+    top: 0;
+}
+
+.burger {
+    position: absolute;
+    margin: 15px 20px;
+    z-index: 31;
+    &:hover {
+        cursor: pointer;
+    }
+    .line1, .line2, .line3 {
+        height: 8px;
+        width: 3rem;
+        margin: 5px;
+        background-color: $orange;
+        border-radius: 3px;
+        transition: all 0.6s ease-in-out;
+    }
+}
+
+.top {
+    .cart-info {
+        .fa-shopping-cart {
+            color: $orange;
+            transition: 0.2s;
+            z-index: 33;
+            font-size: 2.5rem;
+            margin-top: 15px;
+            position: absolute;
+            left: 9%;
+            &:hover {
+                transform: translate(-5px);
+                font-size: 2.9rem;
+                cursor: pointer;
+            }
+        }    
+        span {
+            position: absolute;
+            margin-top: 15px;
+            left: 13%;
+            color: $orange;
+            font-size: 2rem;
+        } 
+    }
+    .cart {
+        display: none;
+        position: absolute;
+        top: 9%;
+        left: 1%;
+        width: 25rem;
+        border-radius: 15px;
+        z-index: 19;
+        background-color: $orange;
+        color: $white;
+        .cart-header {
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .cart-items {
+            .cart-row {
+                display: flex;
+                .cart-item {
+                    width: 50%;
+                    .cart-item-image {
+                        width: 50px;
+                        height: auto;
+                    }
+                }
+                .cart-column {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 10px 0 0 10px;
+                }
+                .cart-price {
+                    width: 10%;
+                }
+                .cart-quantity {
+                    width: 35%;
+                    .btn-danger {
+                        @include white-button($orange);
+                        padding: 0.3rem 0.5rem;
+                        border-radius: 100%;
+                        font-size: 1rem;
+                        margin: 5px;
+                        transition: 0.3s;
+                        &:hover {
+                            background: transparent;
+                            color: $white;
+                            cursor: pointer;
+                        }
+                    }
+                    .cart-quantity-input {
+                        height: 30px;
+                        width: 40px;
+                        border-radius: 5px;
+                        border: solid 2px $white;
+                        background: transparent;
+                        color: $white;
+                        padding: 0;
+                        text-align: center;
+                        margin: 5px;
+                    }
+                }
+
+            }
+        }
+        .cart-total {
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: space-around;
+            margin: 1.5rem;
+        }
+        .purchase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                @include white-button($orange);
+                padding: 0.5rem 1rem;
+                margin: 15px;
+                transition: 0.3s;
+                &:hover {
+                    background-color: transparent;
+                    color: $white;
+                    cursor: pointer;
+                }
+            }            
+        }
+
+    }
+
+    img {
+        position: absolute;
+        right: 0;
+        margin: 15px 20px;
+        width: 2.5rem;
+        z-index: 32;
+    }
+}    
+
+
+
+.toggle .line1 {
+    transform: rotate(-405deg) translate(-9px, 9px);
+    background-color: $white;
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(405deg) translate(-8px, -9px);
+    background-color: $white;
+}
+.toggle .cart {
+    transform: rotate(360deg);
+    background-color: $white;
+}
+
+.circles {
+    .circle1, .circle2, .circle3 {
+        border-radius: 100%;
+        position: absolute;
+        height: 14rem;
+        width: 14rem;
+    }
+    .circle1, .circle3 {
+        background-color: $orange;
+    }
+    .circle1 {
+        bottom: -5rem;
+        left: -7rem;
+    }
+    .circle2 {
+        background-color: $pink;
+        bottom: 3rem;
+        right: -5rem;
+    }
+    .circle3 {
+        top: -7rem;
+        left: 60%;
+    }
+}
+
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .banner-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+    }
+    .banner-text {
+        width: 40%;
+    }
+    img {
+        width: 28rem;
+        z-index: 4;
+    }
+    .circle4 {
+        border-radius: 100%;
+        position: absolute;
+        top: 10%;
+        height: 22rem;
+        width: 22rem;
+        background-color: $pink;
+        z-index: 0;
+    }
+    h1 {
+        @include title($orange);
+    }
+    button {
+        @include clear-button();
+        margin-top: 15px;
+        transition: 0.3s;
+        &:hover {
+            background-color: $orange;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.product-title {
+    @include title($orange);
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+    top: 150px;
+}
+.smoothie-header {
+    @include title($orange);
+    writing-mode: vertical-lr;
+    letter-spacing: 30px;
+    position: absolute;
+    top: 1100px;
+    left: 3%;
+}
+.bowl-header {
+    @include title($orange);
+    writing-mode: vertical-lr;
+    letter-spacing: 30px;
+    position: absolute;
+    right: 3%;
+    top: 1900px;
+}
+main {
+    .products {
+        display: flex;
+        justify-content: center;
+        min-height: 330vh;
+        .column-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 35%;
+            .card {
+                background-color: $pink;
+                position: relative;
+                height: 35rem;
+                width: 23rem;
+                margin: 50px;
+                box-shadow: 0 5px 5px rgb(165, 165, 165);
+                border-radius: 30px;
+                overflow: hidden;
+                h2 {
+                    color: $white;
+                    position: relative;
+                    top: 200px;
+                    letter-spacing: 3px;
+                    z-index: 1000;
+                    transition: transform 0.5s;
+                }
+                img {
+                    width: 90%;
+                }
+                button {                        
+                    @include white-button($pink);
+                    position: relative;
+                    transition: all 0.3s;
+                    &:hover {
+                        background: transparent;
+                        color: $white;
+                        cursor: pointer;
+                    }                        
+                }                                
+                .ingredients {
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    text-align: left;
+                    background: rgba(233, 214, 215, 0.8);
+                    color: $white;
+                    transition: all 0.5s;
+                    h3 {
+                        padding: 15px 0;
+                        font-size: 2rem;
+                    }
+                    li {
+                        padding: 5px;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                        padding: 15px 0;
+                    }
+                    button {
+                        background: transparent;
+                        color: $white;
+                        z-index: 1000;
+                        transition: all 0.3s;
+                        &:hover {
+                            @include white-button($pink);
+                        }
+                    }
+                }
+            }
+        }
+        .column-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            top: 150px;
+            width: 35%;
+            .card {
+                background-color: $orange;
+                position: relative;
+                height: 35rem;
+                width: 23rem;
+                margin: 50px;
+                box-shadow: 0 5px 5px rgb(165, 165, 165);
+                border-radius: 30px;
+                overflow: hidden;
+                transition: all 0.5s;
+                h2 {
+                    color: $white;
+                    position: relative;
+                    top: 40%;
+                    letter-spacing: 3px;
+                    z-index: 1000;
+                    transition: transform 0.5s;
+                }
+                img {
+                    width: 90%;
+                }
+                button {                        
+                    @include white-button($orange);
+                    transition: all 0.3s;
+                    position: relative;
+                    z-index: 1000;
+                    &:hover {
+                        background: transparent;
+                        color: $white;
+                        cursor: pointer;
+                    }                        
+                }                                
+                .ingredients {
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    text-align: left;
+                    background: rgba(250, 193, 173, 0.8);
+                    color: $white;
+                    transition: all 0.5s;
+                    h3 {
+                        padding: 15px 0;
+                        font-size: 2rem;
+                    }
+                    li {
+                        padding: 5px;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                        padding: 15px 0;
+                    }
+                    button {
+                        background: transparent;
+                        color: $white;
+                        z-index: 1000;
+                        transition: all 0.3s;
+                        &:hover {
+                            @include white-button($orange);
+                        }
+                    }
+                }
+            }
+        }    
+        .card.active {
+            h2 {
+                transform: translateY(-140px);
+            }
+            .ingredients {
+                opacity: 1;
+            }
+        }
+
+    }
+}
+
+
+.fa-arrow-alt-circle-up {
+    display: none;
+    font-size: 5rem;
+    color: $orange;
+    background-color: $white;
+    border: solid 4px $orange;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 45px;
+    transition: all 0.3s;
+    &:hover {
+        background-color: $orange;
+        color: $white;
+        cursor: pointer;
+    }
+}
+.up {
+    color: $white;
+    background-color: $orange;
+    border: solid 4px $white;
+    transition: all 0.3s;
+    &:hover {
+        background-color: $white;
+        color: $orange;
+        cursor: pointer;
+    }
+}
+
+
+.create {
+    min-height: 140vh;
+    background-color: $orange;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        @include title($white);
+        margin: 20px 0;
+    }
+    img {
+        width: 100px;            
+    }
+    p {
+        color: $white;
+        padding: 10px;
+    }
+    .create-selection{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 20px 0;
+        button {
+            @include white-button($orange);
+            transition: all 0.3s;
+            &:hover {
+                background: transparent;
+                color: $white;
+                cursor: pointer;
+            }
+        }  
+        .juice {
+            text-align: center;
+            width: 50%;
+            img {
+                height: 100px;
+                margin: 20px;
+                padding: 5px;
+                border: solid 3px transparent;
+                border-radius: 15px;
+                transition: 0.3s;
+                &:hover {
+                    border: solid 3px $white;
+                    cursor: pointer;
+                }
+            }
+            h2 {
+                color: $white;
+            }
+            .ingredient-list {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .item {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 50%;
+                    margin: 5px;
+                    button {
+                        padding: 2px 6px;
+                        font-size: 1rem;
+                        border-radius: 100%;
+                    }
+                    li {
+                        color: $white;
+                    }                    
+                }
+
+            }
+        }
+        .fruit {
+            text-align: center;
+            width: 50%;
+            img {
+                height: 100px;
+                width: auto;
+                margin: 20px;
+                padding: 5px;
+                border: solid 3px transparent;
+                border-radius: 15px;
+                transition: 0.3s;
+                &:hover {
+                    border: solid 3px $white;
+                    cursor: pointer;
+                }
+            }
+            h2 {
+                color: $white;
+            }
+        }
+    }
+    .special-request-container {
+        position: absolute;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .special-request {
+            position: relative;
+            top: 750px;
+            margin: 30px;
+            h2 {
+                margin-bottom: 10px;
+            }
+            input[type = "text"] {
+                width: 70%;
+                padding: 10px 0px;
+                border: none;
+                outline: none;
+                background: none;
+                border-bottom: 3px solid $white;
+                color: $white;
+            }
+            input[type = "submit"] {
+                color: $white;
+                padding: 6px;
+                border: none;
+                outline: none;
+                background: none;
+                border: solid 2px $white;
+                border-radius: 15px;
+                transition: all 0.3s;
+                &:hover {
+                    background-color: $white;
+                    color: $orange;
+                    cursor: pointer;
+                }
+            }            
+        }
+
+    }
+
+}
+.creation-button {
+    position: absolute;
+    button {
+        position: relative;
+        top: 900px;
+        @include white-button($orange);
+        transition: all 0.3s;
+        &:hover {
+            background: transparent;
+            color: $white;
+            cursor: pointer;
+        }
+    }    
+}
+.create-price {
+    display: none;
+    position: absolute;
+}
+
+
+#selection-border {
+    border: solid 3px $white;
+}
+
+@keyframes cupAnimation {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+    }
+    30% {
+        transform: rotate(-35deg) scale(1);
+    }
+    75% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.img-animation {
+    animation: cupAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes additionToCart {
+    0% {
+        transform: translateY(0px);
+    }
+    30% {
+        transform: translateY(-25px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.button-animation {
+    animation: additionToCart;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes ingredientSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ingredient-spin-animation {
+    animation: ingredientSpin;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+}
+
+
+// @keyframes removeIngredients {
+//     0% {
+//         transform: scale(1);
+//     }
+//     100% {
+//         transform: scale(0);
+//     }
+// }
+
+// .ingredient-animation {
+//     animation: removeIngredients;
+//     animation-duration: 0.7s;
+//     animation-timing-function: ease-in-out;
+// }
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    #contact {
+        display: flex;
+        justify-content: center;
+        color: $orange;
+        font-size: 6rem;
+        margin-bottom: 25px;
+    }
+    .contact-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            .inputBox {
+                position: relative;
+                width: 90%;
+                margin: 15px;
+                input, textarea {
+                    position: relative;
+                    background: transparent;
+                    width: 100%;
+                    height: 40px;
+                    border: solid 3px $orange;
+                    border-radius: 20px;
+                    color: $orange;
+                    outline: none;
+                    &:focus ~ span,
+                    &:valid ~ span {
+                        transform: translateY(-35px);
+                    }
+                }
+                input {
+                    padding-left: 10px;
+                    font-size: 16px
+                }
+                textarea {
+                    height: 200px;
+                    padding: 10px;
+                    font-size: 16px;
+                }
+                input[type = "submit"] {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 40px;
+                    background: $white;
+                    padding: 8px 20px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    border: none;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    border: solid 3px $orange;
+                    border-radius: 20px;
+                    color: $orange;
+                    transition: 0.3s;
+                    &:hover {
+                        background: $orange;
+                        color: $white;
+                    }
+                }
+                span {
+                    color: $orange;
+                    position: absolute;
+                    left: 0;
+                    padding: 12px 13px;
+                    font-size: 16px;
+                    transition: all 0.2s;
+                    display: inline-block;
+                    pointer-events: none;
+                }
+            }
+        }
+        .img-container {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 90%;
+            }
+        }        
+    }
+
+}
+
+@media screen and (max-width: 1110px) {
+    main {
+        .products {
+            flex-direction: column;
+            align-items: center;
+            margin: 150px;
+        }
+    }
+    .top {
+        .fa-shopping-cart {
+            left: 11%;
+        }
+    } 
+    .circles {
+        .circle1, .circle2, .circle3 {
+            height: 12rem;
+            width: 12rem;
+        }
+    }
+    .banner {
+        flex-direction: column;
+        text-align: center;
+
+        .banner-text {
+            width: 100%;
+        }
+        img {
+            width: 28rem;
+            z-index: 4;
+        }
+        .circle4 {
+            position: absolute;
+            top: 10%;
+            height: 20rem;
+            width: 20rem;
+        }
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+}
+@media screen and (max-width: 824px) {
+    nav {
+        a {
+        font-size: 4rem;
+        }
+    }
+    .top {
+        .fa-shopping-cart {
+            left: 14%;
+        }
+    } 
+    .circles {
+        .circle1, .circle2, .circle3 {
+            height: 10rem;
+            width: 10rem;
+        }
+        .circle1 {
+            bottom: -5rem;
+            left: -5rem;
+        }
+        .circle2 {
+            background-color: $pink;
+            bottom: 3rem;
+            right: -5rem;
+        }
+        .circle3 {
+            top: -5rem;
+            left: 60%;
+        }
+    }
+
+    .banner {
+        img {
+            width: 25rem;
+            z-index: 4;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+
+    .create {
+        height: 190vh;
+        h1 {
+            font-size: 4rem;
+        }
+        img {
+            width: 80px;            
+        }
+        .create-selection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .juice {
+                img {
+                    height: 80px;
+                }
+                .creation {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    position: absolute;
+                    top: 6220px;
+                }
+            }
+            .fruit {
+                .fruit-options {
+                    display: flex;
+                }
+                img {
+                    height: 80px;
+                }
+            }
+        }
+        .special-request-container {
+            position: absolute;
+            .special-request {
+                position: relative;
+                top: 950px;         
+            }
+
+        }
+        .creation-button {
+            button {
+                position: relative;
+                top: 1300px;
+
+            }    
+        }
+
+    }
+    footer {
+        #contact {
+            font-size: 4rem;
+        }
+        .contact-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .img-container {
+                display: none;
+            }        
+        }
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        a {
+        font-size: 3rem;
+        }
+    }
+
+    .top {
+        .fa-shopping-cart {
+            left: 20%;
+        }
+    }    
+    .circles {
+        z-index: 0;
+        .circle1, .circle2, .circle3 {
+            height: 8rem;
+            width: 8rem;
+        }
+        .circle2 {
+            bottom: 12rem;
+        }
+        .circle3 {
+            display: none;
+        }
+    }
+    .smoothie-header {
+        display: none;
+    }
+    .bowl-header {
+        display: none;
+    }
+
+    .create {
+        h1 {
+            font-size: 3rem;
+        }
+        .create-selection{
+            .juice {
+                .creation {
+                    top: 6140px;
+                }
+            }
+        }
+        .special-request-container {
+            .special-request {
+                top: 900px;         
+            }
+
+        }
+
+    }
+
+}
